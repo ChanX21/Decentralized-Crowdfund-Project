@@ -1,0 +1,19 @@
+.toolbar {
+   position: fixed ;
+   width : 100%;
+   background-color: goldenrod;
+   font-family: courier,arial,helvetica;;
+  
+}
+
+label {
+
+ position : relative;
+ top : 220px;
+ left : 30%;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-weight: bold;
+ font-size: medium;
+ 
+}
+
