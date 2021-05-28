@@ -1,6 +1,6 @@
 import './toolbar.css';
 import React from 'react';
-
+import Logo from '../Logo.png';
 
 
 
@@ -9,7 +9,8 @@ const toobar = props => {
                 <header className='HeadTool'>
                 <nav>
                 <div className='toolbar'>
-                       <h1>CROWDFUND+</h1>
+                       
+                       <img src={Logo} alt="Logo" width="420"/>
                        
                 </div>
                                
