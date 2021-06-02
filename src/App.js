@@ -2,8 +2,6 @@ import Toolbar from "./components/Toolbar";
 import Web3 from 'web3';
 import "./App.css";
 import basic_Crowdfund from '../src/abis/basic_Crowdfund.json' //This path is not the default please find other ways => Update : Done 
-
-
 import React, { Component } from 'react';
 
 
@@ -73,16 +71,11 @@ class App extends Component {
     <Toolbar account={this.state.account}/>   
     
     <button  className="Host_Button" >Host</button>
-    
- 
-      
-    
-   
-    
-    
+
 
     <form>
       <div className="ProjList">
+
 
        
       <label >Contract Name : "{basic_Crowdfund.contractName}"<br></br><br></br><br></br></label>  
@@ -101,6 +94,7 @@ class App extends Component {
 }
 
 export default App;
+
 
 
 

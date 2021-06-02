@@ -12,19 +12,19 @@ const toobar = props => {
                 <header className='HeadTool'>
                 <nav>
                 <div className='toolbar'>
+
                 
                        <img src={Logo} alt="Logo" width="420"/>
                        
                         <div className="AccountAlign">
                          <large >{props.account}</large>     
                               
-                        </div>
-
-                       
+                        </div>                       
                        
 
                 </div>
                
+
                </nav>
                
                <div className="Paragraph">
@@ -33,7 +33,7 @@ const toobar = props => {
                </div>
                
 
-                </header>
+          </header>
                 
                 
         )
