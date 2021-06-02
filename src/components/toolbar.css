@@ -3,6 +3,9 @@
    width : 100%;
    background-color: goldenrod;
    font-family: courier,arial,helvetica;;
+
+   height: 15%;
+
   
 }
 
@@ -16,4 +19,13 @@ label {
  font-size: medium;
  
 }
+
+
+.AccountAlign {
+   position:relative;
+   left: 72.5%;
+   top : -50%;
+   font-weight: bold;
+}
+=======
 
