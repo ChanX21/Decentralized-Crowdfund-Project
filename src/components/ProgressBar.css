@@ -1,0 +1,16 @@
+#myProgress {
+    
+   
+    width: 100%;
+    background-color: rgb(139, 139, 139);
+  }
+  
+  #myBar {
+    width: 30%;
+    height: 30px;
+    background-color: goldenrod;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: black;
+    font-weight: bold;
+  }

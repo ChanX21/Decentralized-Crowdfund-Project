@@ -1,8 +1,12 @@
 import Toolbar from "./components/Toolbar";
+import ProgressBar from "./components/ProgressBar";
 import Web3 from 'web3';
 import "./App.css";
 import basic_Crowdfund from '../src/abis/basic_Crowdfund.json' //This path is not the default please find other ways => Update : Done 
+import {Link, Route ,Router} from "react-router-dom";
 import React, { Component } from 'react';
+import Host from './Pages/Host';
+import MainPage from './Pages/MainPage';
 
 
 var Annex = "Project";
@@ -65,36 +69,28 @@ class App extends Component {
 
   
   render() {
+
     return (
       <div>
-        <div className="App">      
-    <Toolbar account={this.state.account}/>   
-    
-    <button  className="Host_Button" >Host</button>
+        <div className="App">    
+        
+          
+      <Toolbar account={this.state.account}/>   
+     
+      
 
+             <Route exact path='/' component={MainPage}/> 
+            <Route exact path='/Host' component={Host}/> 
+           
+ 
 
-    <form>
-      <div className="ProjList">
-
-
-       
-      <label >Contract Name : "{basic_Crowdfund.contractName}"<br></br><br></br><br></br></label>  
-      <label >The Network ID : {this.state.NetID} <br></br><br></br><br></br></label>  
-      <label >'Requirement' State : {this.state.Requirement}  <br></br><br></br><br></br></label>  
-      <label >Fundraising {Annex} List ID <br></br><br></br><br></br></label>  
-
-      </div>
-    </form> 
-    
-    
-                    </div>
+       </div>
       </div>
     );
   }
 }
 
 export default App;
-
 
 
 
