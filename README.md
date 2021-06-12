@@ -1,6 +1,6 @@
 # Decentralized Crowdfund Project
 This is part of the Blockchain Project I and My Team are doing as part of the Engineering Degree Course
-### Update 1.1
+### Update 2.0
 
 <a href="https://ibb.co/hMYZwsH"><img src="https://i.ibb.co/26ZsHqP/Home-Screen.png" alt="Home-Screen" border="0"></a>
 
