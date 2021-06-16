@@ -6,12 +6,13 @@ import { render } from 'react-dom';
 
 
 
-
-
+var Array = ["Hello","Today","Nice"];
     
 export class MainPage extends Component {
  
     
+ 
+
 
     render() {
         
@@ -34,18 +35,23 @@ export class MainPage extends Component {
       <label >'Requirement' State : {this.state.Requirement}  <br></br><br></br><br></br></label>  
       <label >Fundraising {Annex} List ID <br></br><br></br><br></br></label>   */}
      
-     
-      </div>     
-    <div className="ProjectListBox">
-     <p className="ProjLabel" >Project 1</p>
-     <ProgressBar/>
-     </div>
     
-     <div className="ProjectListBox">
-     <p className="ProjLabel" >Project 2</p>
-     <ProgressBar/>
-     </div>
+     
+      </div>  
+      <ul>   
 
+
+      {Array.map( i => {
+        return <div className="ProjectListBox">
+        <p className="ProjLabel" >{i}</p>
+        <ProgressBar/>
+        </div>
+        ;
+      })}
+    
+     </ul>
+
+         
             </div>
         ) 
 
