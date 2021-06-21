@@ -14,7 +14,7 @@ const toobar = props => {
                 <nav>
                
                 <div className='toolbar'>
-                <Link to="./" >
+                <Link to="/" >
                        <img src={Logo} alt="Logo" width="420"/>
                        </Link>      
                         <div className="AccountAlign">

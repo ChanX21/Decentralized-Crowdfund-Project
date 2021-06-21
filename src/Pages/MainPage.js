@@ -1,62 +1,96 @@
 import React, { Component ,  useCallback } from 'react'
 import PropTypes from 'prop-types';
 import ProgressBar from "../components/ProgressBar";
-import { useHistory, Link } from 'react-router-dom';
 import { render } from 'react-dom';
+import Project_List from '../abis/Project_List.json';
+import {
+    BrowserRouter as Router,
+    useHistory,
+    Switch,
+    Route,
+    Link,
+    useParams
+  } from "react-router-dom";
+  import ProjDetails from './ProjDetails';
+  import App from '../App';
+  import Web3 from 'web3';
 
 
 
-var Array = ["Hello","Today","Nice"];
-    
+
+var Array = [{ Title:"Project to Build a House ", id : 1},{ Title:"Need Construction Money", id : 2},{ Title:"Please Help", id : 3}];
+var id = [1,2,3];
+var ListArr = [];
+
+
+
 export class MainPage extends Component {
- 
-    
- 
 
+    constructor(props) {
+        super(props);
+        this.state = {
+          NumProjs : 0,
+          NumOfBlocks : 0
+        };
+      }
+     
+      
+       
+    
 
     render() {
         
         
+        const List = this.props
+        const ProjectListArray = this.props.List
         
+
+        //console.log(ProjectListArray)
+       //console.log(List)
+        const j=0;   
+     
         return (
                    
            
-
+       
      <div> 
                 
                        
-                 <Link to="/Host" > <button  className="Host_Button"  > Host</button> </Link>
+     <Link to="/Host" > <button  className="Host_Button"  >Host</button> </Link>
     
       <div className="ProjList">
 
       
-   {/*    <label >Contract Name : "{basic_Crowdfund.contractName}"<br></br><br></br><br></br></label>  
-      <label >The Network ID : {this.state.NetID} <br></br><br></br><br></br></label>  
-      <label >'Requirement' State : {this.state.Requirement}  <br></br><br></br><br></br></label>  
-      <label >Fundraising {Annex} List ID <br></br><br></br><br></br></label>   */}
      
-    
      
-      </div>  
-      <ul>   
+       
+               <ul>   
 
-
-      {Array.map( i => {
-        return <div className="ProjectListBox">
-        <p className="ProjLabel" >{i}</p>
-        <ProgressBar/>
-        </div>
-        ;
-      })}
+ 
+                   {Array.map( i => {
+                      return <Link to={"/"+i.id} IdNo={1} style={{ textDecoration: 'none', color: 'black' }}><div className="ProjectListBox">
+                             <p className="ProjLabel" >{i.Title}</p>
+                             <ProgressBar/>
+                             
+                            </div></Link>
+                                   ;
+                                  })}
     
-     </ul>
+                </ul>
+                <label>{this.state.ProjectListArray}</label>
 
+           </div>   
+        <Switch>
          
-            </div>
+        </Switch>
+        
+        </div>
         ) 
 
      
     } 
 }
+
+
 
 export default MainPage

@@ -4,12 +4,14 @@ import './Host.css';
 import Project_List from '../abis/Project_List.json';
 
 
-const ProjList= '';
+
+
 
 
 
 export class Host extends Component {
   
+
 
   async loadBlockchainData() {
     const web3 = window.web3
@@ -22,7 +24,7 @@ export class Host extends Component {
     
     const networkData =  Project_List.networks[networkId]
     this.setState({ NetID : networkId})
-    ProjList = new web3.eth.Contract(Project_List.abi, networkData.address)
+    const ProjList = new web3.eth.Contract(Project_List.abi, networkData.address)
     
   }
   
@@ -80,7 +82,7 @@ export class Host extends Component {
     const Proj2 = await ProjList.methods.createProject(this.state.Budget, this.state.Deadline,this.state.Title).send({from: this.state.account})
     
     
-    alert("You are submitting is " + this.state.Title +" " + this.state.Budget +" " + this.state.Deadline );
+    alert("You are submitting To Host a Project " + this.state.Title +" " + this.state.Budget +" " + this.state.Deadline );
     
  }    
   
@@ -115,6 +117,7 @@ export class Host extends Component {
           Deadline   &nbsp;&nbsp;
           <input  type="text" name="Deadline" style={{left : '56px'}} onChange={this.handleChangeOnlyNumbers} />
         </label>
+       
         <input
         type='submit'
       />
@@ -133,3 +136,9 @@ export class Host extends Component {
 }
 
 export default Host
+
+
+/* Goals   &nbsp;&nbsp;
+<input  type="text" name="Deadline" style={{left : '111px'}}  /><br/>
+&nbsp;&nbsp;   <input  type="text" name="Deadline" style={{left : '192px'}}/>
+</label> */
