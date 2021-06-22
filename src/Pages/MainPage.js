@@ -43,10 +43,15 @@ export class MainPage extends Component {
         
         const List = this.props
         const ProjectListArray = this.props.List
+         
+
+
+    
         
 
-        //console.log(ProjectListArray)
-       //console.log(List)
+      console.log(ProjectListArray)
+      // console.log(List["Result"])
+
         const j=0;   
      
         return (
@@ -67,9 +72,9 @@ export class MainPage extends Component {
                <ul>   
 
  
-                   {Array.map( i => {
-                      return <Link to={"/"+i.id} IdNo={1} style={{ textDecoration: 'none', color: 'black' }}><div className="ProjectListBox">
-                             <p className="ProjLabel" >{i.Title}</p>
+                   {ProjectListArray.map( (i) => {
+                      return <Link to={"/"+i.id} style={{ textDecoration: 'none', color: 'black' }}><div className="ProjectListBox">
+                             <p className="ProjLabel" >{i[0]} &ensp;&ensp;   Budget:{i[2]}&ensp;  Deadline:{i[1]} &ensp;</p>
                              <ProgressBar/>
                              
                             </div></Link>

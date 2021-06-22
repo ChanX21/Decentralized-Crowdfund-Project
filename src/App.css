@@ -36,7 +36,7 @@ cursor: pointer;
 .Host_Button {
     position: relative;
     left: 30%;
-    top: 150px;
+    top: 90px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     background-color: #000000; /* Green */
@@ -100,4 +100,5 @@ font-weight: bold;
     transform: scaleX(1);
     transform-origin: left;
   }
+
 

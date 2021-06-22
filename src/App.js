@@ -15,7 +15,7 @@ var Contract = require('web3-eth-contract');
 var Select = 0;
 
 
-var id = [1,2,3];
+var ID = [1,2,3];
 
 class App extends Component {
   
@@ -62,12 +62,14 @@ class App extends Component {
     
     for (var i=(Req-1); i>=1; i--) {
       const FundraisingProjects = await ProjList.methods.GetProject(i).call()
+      FundraisingProjects.id = i
       this.setState({
         ListOfProjects: [...this.state.ListOfProjects, FundraisingProjects]
       })
+      
     }
 
-  
+    ID = this.state.ListOfProjects.id
    // const Proj = await ProjList.methods.createProject(700,399,'Great Project').send({from: this.state.account})
     //const Proj2 = await ProjList.methods.createProject(500,199,'Super Project').send({from: this.state.account})
     
@@ -113,18 +115,14 @@ class App extends Component {
            
             <Route exact path='/'  component={() => <MainPage List={this.state.ListOfProjects}  />}/> 
             <Route exact path='/Host' component={Host}/>             
-            <Route exact path="/:id" children={() => <ProjDetails Details={this.state.ListOfProjects} />} />
+            <Route exact path="/:ID" children={() => <ProjDetails Details={this.state.ListOfProjects} />} />
             
             </Switch>
             
             
             <br /> <br /> <br />  <br /> <br /> <br />
             <label>Number of Projects is {this.state.NumOfProjects}</label> <br/>
-            <label>The Selected Project Number is {Select + 1}</label> <br/>
-            <label>The Title of the Project is  {this.state.ProjectTitle}</label> <br/>
-            <label>The Project Deadline is {this.state.ProjectDeadline}</label>  <br/>
-            <label>The Project Budget is {this.state.ProjectBudget}</label>
-            <label>The Project Budget is {this.state.Block}</label>
+           
              
        </div>
       </div>

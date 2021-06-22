@@ -1,5 +1,5 @@
 .toolbar {
-   position: fixed ;
+   position: sticky ;
    width : 100%;
    background-color: goldenrod;
    font-family: courier,arial,helvetica;;
@@ -21,6 +21,6 @@ label {
 .AccountAlign {
    position:relative;
    left: 72.5%;
-   top : -50%;
+   top : -50px;
    font-weight: bold;
 }
