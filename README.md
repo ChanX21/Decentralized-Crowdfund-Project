@@ -1,28 +1,36 @@
 # Decentralized Crowdfund Project
-This is part of the Blockchain Project I and My Team are doing as part of the Engineering Degree Course
-### Update 2.0
-
-<a href="https://ibb.co/hMYZwsH"><img src="https://i.ibb.co/26ZsHqP/Home-Screen.png" alt="Home-Screen" border="0"></a>
-
-- Page Added 
-- Project List added 
-- The Pages Linked 
-- Form Updated
+This is part of the Blockchain Project I and My Team are doing as part of the Engineering Degree Course. This code is not a clean optimized code but it will do the job. The code is largely the result of the internet. Please Fork if needed.
 
 
-### Update 1.1
 
-<a href="https://ibb.co/0GhgscQ"><img src="https://i.ibb.co/Vq27wt3/Crowdfund-Update-1-1.png" alt="Crowdfund-Update-1-1" border="0"></a>
+### Update 3.0
 
-- Host Button added 
-- Contract Connection Made
-- Different States and Properties Displayed
+Main Page  <br/>
+Host Page <br/>
+Project Details Page [Incomplete Code and Smart Contract Connection]
+Respectively
+
+<a href="https://ibb.co/frn2DCD"><img src="https://i.ibb.co/Yfy30t0/Main-Page-Final.png" alt="Main-Page-Final" border="0"></a>
 
 
-### Update 1
+<a href="https://ibb.co/1QshD4Q"><img src="https://i.ibb.co/7Cg8w0C/Host-Page-Final.png" alt="Host-Page-Final" border="0"></a>
 
-<a href="https://ibb.co/KKH2Tq8"><img src="https://i.ibb.co/tL5qVs1/Logo-Paint.png" alt="Logo-Paint" border="0"></a>
 
-- Initial Homescreen
-- Navbar
-- Logo Updation
+
+<a href="https://ibb.co/2ZvZ5pG"><img src="https://i.ibb.co/0sCsQzH/Proj-Details-PAge.png" alt="Proj-Details-PAge" border="0"></a>
+
+<br/>
+
+### How To Install
+
+1. Install Node.js
+2. Clone this Repo
+3. npm install --save
+4. Change the configuration in truffle-config
+5. install a test network [ Ganache recommended ]
+6. start the npm server by typing 'npm start'
+7. perform the usual blockchain migration in truffle
+
+
+
+
