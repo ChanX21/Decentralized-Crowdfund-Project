@@ -30,6 +30,7 @@ Respectively
 5. install a test network [ Ganache recommended ]
 6. start the npm server by typing 'npm start'
 7. perform the usual blockchain migration in truffle
+8. For connection to the blockchain from the client please install Metamask wallet
 
 
 
