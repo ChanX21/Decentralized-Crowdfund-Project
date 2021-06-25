@@ -1,24 +1,31 @@
 import Toolbar from "./components/Toolbar";
+import ProgressBar from "./components/ProgressBar";
 import Web3 from 'web3';
 import "./App.css";
-import basic_Crowdfund from '../src/abis/basic_Crowdfund.json' //This path is not the default please find other ways => Update : Done 
+import Project_List from '../src/abis/Project_List.json';
+import {Link, Switch, Route ,Router} from "react-router-dom";
 import React, { Component } from 'react';
+import Host from './Pages/Host';
+import MainPage from './Pages/MainPage';
+import ProjDetails from './Pages/ProjDetails';
 
 
 var Annex = "Project";
 var Contract = require('web3-eth-contract');
+var Select = 0;
 
 
-
+var ID = [1,2,3];
 
 class App extends Component {
-
   
-
+  
+  
   async componentWillMount() {
     await this.loadWeb3()
     await this.loadBlockchainData()
   }
+
 
   async loadWeb3() {
     if (window.ethereum) {
@@ -40,14 +47,41 @@ class App extends Component {
     console.log(accounts)
     this.setState({ account: accounts[0] })
     // Network ID
-    const networkId = await web3.eth.net.getId()
-    
-    const networkData = basic_Crowdfund.networks[networkId]
+    const networkId = await web3.eth.net.getId()    
+    const networkData =  Project_List.networks[networkId]
     this.setState({ NetID : networkId})
-    const basicCrowdfund = new web3.eth.Contract(basic_Crowdfund.abi, networkData.address)
-    const Req = await basicCrowdfund.methods.Requirement().call()
-    this.setState({Requirement : Req}) 
+    const ProjList = new web3.eth.Contract(Project_List.abi, networkData.address)
+
+    //To Get the block count in the Log
+    const BlockCount = web3.eth.getBlock()
+    console.log(BlockCount)
+    
+
+    
+    const Req = await ProjList.methods.numOfProjects().call()
+    
+    for (var i=(Req-1); i>=1; i--) {
+      const FundraisingProjects = await ProjList.methods.GetProject(i).call()
+      FundraisingProjects.id = i
+      this.setState({
+        ListOfProjects: [...this.state.ListOfProjects, FundraisingProjects]
+      })
+      
+    }
+
+    ID = this.state.ListOfProjects.id
+   // const Proj = await ProjList.methods.createProject(700,399,'Great Project').send({from: this.state.account})
+    //const Proj2 = await ProjList.methods.createProject(500,199,'Super Project').send({from: this.state.account})
+    
+    const Var2 = await ProjList.methods.GetProject(Select).call()
+    
+    this.setState({Block : BlockCount[0]}) 
+    this.setState({NumOfProjects : Req}) 
+    this.setState({ProjectTitle : Var2[0]}) 
+    this.setState({ProjectDeadline : Var2[1]}) 
+    this.setState({ProjectBudget : Var2[2]}) 
     //Just Trying out Contract Calls Please Check and If necessary delete it!
+    // Check Success !
 
 
   }
@@ -58,43 +92,45 @@ class App extends Component {
     this.state = {
       NeeetID : 22000,
       NetID : 0,
-      Requirement : null
+      ListOfProjects :[],
+      NumOfProjects : null,
+      ProjectTitle : null,
+      ProjectBudget : null,
+      ProjectDeadline : null,
+      Block : null
     };
   }
    
 
   
   render() {
+    
     return (
       <div>
-        <div className="App">      
-    <Toolbar account={this.state.account}/>   
-    
-    <button  className="Host_Button" >Host</button>
-
-
-    <form>
-      <div className="ProjList">
-
-
-       
-      <label >Contract Name : "{basic_Crowdfund.contractName}"<br></br><br></br><br></br></label>  
-      <label >The Network ID : {this.state.NetID} <br></br><br></br><br></br></label>  
-      <label >'Requirement' State : {this.state.Requirement}  <br></br><br></br><br></br></label>  
-      <label >Fundraising {Annex} List ID <br></br><br></br><br></br></label>  
-
-      </div>
-    </form> 
-    
-    
-                    </div>
+        <div className="App">    
+        
+          
+      <Toolbar account={this.state.account}/>   
+        <Switch>
+           
+            <Route exact path='/'  component={() => <MainPage List={this.state.ListOfProjects}  />}/> 
+            <Route exact path='/Host' component={Host}/>             
+            <Route exact path="/:ID" children={() => <ProjDetails Details={this.state.ListOfProjects} />} />
+            
+            </Switch>
+            
+            
+            <br /> <br /> <br />  <br /> <br /> <br />
+            <label>Number of Projects is {this.state.NumOfProjects}</label> <br/>
+           
+             
+       </div>
       </div>
     );
   }
 }
 
 export default App;
-
 
 
 

@@ -2,15 +2,41 @@ label {
 
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 font-size:xx-large;
-
+transition: 0.2s color;
+cursor: pointer;
 
 
 }
+  label:hover {
+    color: #dab02a;
+  }
+  label:before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;    
+    transition: 0.3s transform ease-in-out;
+  }
+  label:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+
+
+
 
 .Host_Button {
     position: relative;
     left: 30%;
-    top: 150px;
+    top: 90px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     background-color: #000000; /* Green */
@@ -33,3 +59,46 @@ font-size:xx-large;
 .Host_Button:hover {
     box-shadow: inset 0 100px 0 0 #dab02a;
   }
+
+.ProjectListBox{
+ position: relative;
+ top: 180px;
+ left: 10%; 
+ width: 70%;
+  border: 15px solid black;
+  padding: 35px;
+  margin: 20px;
+  cursor: pointer;
+
+}
+
+.ProjLabel{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size:xx-large;
+transition: 0.2s color;
+font-weight: bold;
+
+}
+  .ProjLabel:hover {
+    color: #dab02a;
+  }
+  .ProjLabel:before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.3s transform ease-in-out;
+  }
+  .ProjLabel:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+
