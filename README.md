@@ -12,7 +12,7 @@ This is part of the Blockchain Project I and My Team are doing as part of the En
 
 
 
-<a href="https://ibb.co/nRh9G1N"><img src="https://i.ibb.co/nRh9G1N/Proj-Details.png" alt="Proj-Details" border="0"></a>
+<a href="https://ibb.co/nRh9G1N"><img src="https://i.ibb.co/Lv4mFgX/Proj-Details.png" alt="Proj-Details" border="0"></a>
 
 <br/>
 
