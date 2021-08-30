@@ -114,7 +114,7 @@ export default class ProjDetails extends Component {
        
         
         
-        const percentage = (ProjDetailsArray[NewHello][4]/ProjDetailsArray[NewHello][2])*100
+        const percentage = Math.round((ProjDetailsArray[NewHello][4]/ProjDetailsArray[NewHello][2])*10000)/100
       
       return (
         <div>
