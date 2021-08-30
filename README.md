@@ -3,12 +3,7 @@ This is part of the Blockchain Project I and My Team are doing as part of the En
 
 
 
-### Update 3.0
-
-Main Page  <br/>
-Host Page <br/>
-Project Details Page [Incomplete Code and Smart Contract Connection]
-Respectively
+### APP COMPLETION
 
 <a href="https://ibb.co/frn2DCD"><img src="https://i.ibb.co/Yfy30t0/Main-Page-Final.png" alt="Main-Page-Final" border="0"></a>
 
