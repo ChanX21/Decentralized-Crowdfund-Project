@@ -1,18 +1,58 @@
 .TitleBox{
     position: relative;
-    top: -85px;
+    top: -185px;
     left: 3%; 
     width: 45%;
      border: 15px solid black;
      padding: 35px;
      margin: 20px;
-     cursor: pointer;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size:xx-large;
    
    }
 
-#TitleText{
+.TitleText{
     position: relative;
     top: -85px;
     left: 3%; 
 
    }
+
+.DetailsBox{
+
+    position: relative;
+    top: -345px;
+    left: 60%; 
+    width: 30%;
+     border: 15px solid black;
+     padding: 22px 35px;
+     margin: 20px;
+     height: 550px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:xx-large;
+    font-weight: bold;
+}
+
+.ContributeButton{
+
+position: relative;
+top: -708px;
+left: -11.5%; 
+
+}
+   
+
+.ContributionInput{
+position: relative;
+font-size: xx-large;
+left:220px;
+top: 85px;
+
+}
+
+.ContractName{
+
+    font-size:.6em;
+}
+

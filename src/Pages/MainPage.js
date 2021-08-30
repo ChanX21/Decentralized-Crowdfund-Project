@@ -73,9 +73,9 @@ export class MainPage extends Component {
 
  
                    {ProjectListArray.map( (i) => {
-                      return <Link to={"/"+i.id} style={{ textDecoration: 'none', color: 'black' }}><div className="ProjectListBox">
+                      return <Link to={{pathname:"/"+i.id, state: {idNumber : 2 }}} style={{ textDecoration: 'none', color: 'black' } } ><div className="ProjectListBox">
                              <p className="ProjLabel" >{i[0]} &ensp;&ensp;   Budget:{i[2]}&ensp;  Deadline:{i[1]} &ensp;</p>
-                             <ProgressBar/>
+                             <ProgressBar />
                              
                             </div></Link>
                                    ;

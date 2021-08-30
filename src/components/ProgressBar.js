@@ -22,13 +22,14 @@ function move() {
   }
 }
 
-
-
 var PercentNum = 60;
+
 
 var dynamicWidth = 648; // '1080' is the max
 
 const toobar = props => {
+
+
         return (
                 <header >
             

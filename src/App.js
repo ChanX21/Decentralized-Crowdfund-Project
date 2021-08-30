@@ -50,24 +50,32 @@ class App extends Component {
     const networkId = await web3.eth.net.getId()    
     const networkData =  Project_List.networks[networkId]
     this.setState({ NetID : networkId})
-    const ProjList = new web3.eth.Contract(Project_List.abi, networkData.address)
+    const ProjList = new web3.eth.Contract(Project_List.abi , networkData.address)
 
     //To Get the block count in the Log
+    console.log("This is a Marker :) ")
     const BlockCount = web3.eth.getBlock()
     console.log(BlockCount)
-    
+    var varb =0
+    const promiseB = BlockCount.then(function(result) {
+      varb = result.number;
+      return result.number;
+    });  
 
+
+  
     
     const Req = await ProjList.methods.numOfProjects().call()
     
-    for (var i=(Req-1); i>=1; i--) {
+    for (var i=(Req-1); i>=0; i--) {
       const FundraisingProjects = await ProjList.methods.GetProject(i).call()
-      FundraisingProjects.id = i
+      FundraisingProjects.id = -( i - (Req-1))
       this.setState({
         ListOfProjects: [...this.state.ListOfProjects, FundraisingProjects]
       })
       
     }
+
 
     ID = this.state.ListOfProjects.id
    // const Proj = await ProjList.methods.createProject(700,399,'Great Project').send({from: this.state.account})
@@ -75,11 +83,11 @@ class App extends Component {
     
     const Var2 = await ProjList.methods.GetProject(Select).call()
     
-    this.setState({Block : BlockCount[0]}) 
+    this.setState({Block : varb}) 
     this.setState({NumOfProjects : Req}) 
-    this.setState({ProjectTitle : Var2[0]}) 
+   /*  this.setState({ProjectTitle : Var2[0]}) 
     this.setState({ProjectDeadline : Var2[1]}) 
-    this.setState({ProjectBudget : Var2[2]}) 
+    this.setState({ProjectBudget : Var2[2]})  */
     //Just Trying out Contract Calls Please Check and If necessary delete it!
     // Check Success !
 
@@ -117,11 +125,15 @@ class App extends Component {
             <Route exact path='/Host' component={Host}/>             
             <Route exact path="/:ID" children={() => <ProjDetails Details={this.state.ListOfProjects} />} />
             
+            
             </Switch>
             
             
             <br /> <br /> <br />  <br /> <br /> <br />
-            <label>Number of Projects is {this.state.NumOfProjects}</label> <br/>
+            <label>Number of Projects is {this.state.NumOfProjects}</label> <br/> 
+            <label>Block Number : {this.state.Block}</label> <br/>
+
+            
            
              
        </div>
